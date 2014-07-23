@@ -1161,7 +1161,8 @@ else{
 			}
 
 			# Generate Preview Image
-			exe("convert $SCAN -scale '450x471' ".shell("scans/$P_FILENAME"),true);
+			//~exe("convert $SCAN -scale '450x471' ".shell("scans/$P_FILENAME"),true);
+			exe("cp $SCAN ".shell("scans/$P_FILENAME"),true);
 
 			# Convert scan to file type
 			if($FILETYPE=="txt"){
@@ -1173,7 +1174,8 @@ else{
 					SaveFile("scans/$S_FILENAMET.txt","");
 			}
 			else{
-				exe("convert $SCAN -alpha off ".shell("scans/$S_FILENAME"),true);
+				//~exe("convert $SCAN -alpha off ".shell("scans/$S_FILENAME"),true);
+				exe("cp $SCAN ".shell("scans/$S_FILENAME"),true);
 			}
 			@unlink("$CANDIR/".$files[$i]);
 		}
